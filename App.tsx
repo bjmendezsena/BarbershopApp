@@ -1,13 +1,14 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { HelloWolrd } from "app/components";
+// import { HelloWolrd } from "app/components";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style='auto' />
-      <HelloWolrd />
+      {/* <HelloWolrd /> */}
+      <Text>HGola</Text>
     </View>
   );
 }

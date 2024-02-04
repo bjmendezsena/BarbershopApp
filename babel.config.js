@@ -6,6 +6,9 @@ module.exports = function(api) {
       [
         'module-resolver',
         {
+          alias: {
+            '@/*': './*' 
+          },
           extensions: [
             '.js',
             '.jsx',
@@ -16,7 +19,7 @@ module.exports = function(api) {
             '.ios.js',
             '.ios.tsx'
           ],
-          root: ['.']
+          // root: ['.']
         }
       ]
     ]
