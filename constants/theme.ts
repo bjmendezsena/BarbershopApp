@@ -13,7 +13,7 @@ export const colors = {
 
 export const shadow = {
   light: {
-    shadowColor: colors.black,
+    shadowColor: colors.white,
     shadowRadius: 4,
     shadowOpacity: 0.1,
     shadowOffset: {
@@ -39,7 +39,8 @@ export const sizes = {
   h2: 24,
   h3: 18,
   body: 14,
-  radius: 16,
+  radius: 15,
+  smallBody: 12,
 };
 
 export const spacing = {

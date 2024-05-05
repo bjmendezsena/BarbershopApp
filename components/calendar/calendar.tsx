@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import { EvilIcons } from '@expo/vector-icons';
 import moment from 'moment';
 import { Date } from './date';
-import { sizes } from '@/constants';
+import { colors, sizes } from '@/constants';
+import { Typography } from '../typography';
 
-interface Propos {
-  onSelectDate: React.Dispatch<React.SetStateAction<string | null>>;
-  selected: string | null;
+type CalendarProps = {
+  onSelectDate: React.Dispatch<React.SetStateAction<string>>;
+  selected: string;
 }
 
-export const Calendar = ({ onSelectDate, selected }: Propos) => {
+export const Calendar = ({ onSelectDate, selected }: CalendarProps) => {
   const [dates, setDates] = useState<moment.Moment[]>([]);
   const [currentMonth, setCurrentMonth] = useState('');
 
@@ -35,7 +35,9 @@ export const Calendar = ({ onSelectDate, selected }: Propos) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.monthText}>{currentMonth}</Text>
+        <Typography variant="h3" style={styles.monthText}>
+          {currentMonth}
+        </Typography>
       </View>
 
       <View style={styles.daysContainer}>
@@ -55,22 +57,24 @@ export const Calendar = ({ onSelectDate, selected }: Propos) => {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
+    backgroundColor: '#3C3547',
+    borderRadius: sizes.radius,
+    padding: 10,
   },
   headerContainer: {
     width: '100%',
-    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   monthText: {
     marginLeft: 8,
     fontSize: sizes.body,
     fontWeight: '600',
-    // color: '#FAFAFA',
     textShadowColor: 'rgba(0, 0, 0, 0.10)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 0.2,
     textTransform: 'capitalize',
+    color: colors.white
   },
   daysContainer: {
     height: 80,

@@ -34,8 +34,13 @@ export default () => {
         screenOptions={{
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarActiveTintColor: colors.primary,
+          tabBarActiveTintColor: colors.white,
           tabBarInactiveTintColor: colors.lightGray,
+          tabBarStyle: {
+            backgroundColor: '#2B293A',
+            borderTopColor: 'transparent',
+            height: 90,
+          },
         }}
       >
         {tabs.map(({ name, icon }, index) => (
@@ -75,7 +80,7 @@ const styles = StyleSheet.create({
     height: 2,
     left: sizes.width / 4 / 2 - 5,
     bottom: 30,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.white,
     zIndex: 100,
   },
 });
